@@ -8,9 +8,15 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "SB-Sans": ["SB-Sans", "Arial", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      maxWidth: {
+        contentWrapper: "288px",
       },
     },
   },

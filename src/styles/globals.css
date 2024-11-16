@@ -2,20 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "SB-Sans";
+  src:
+    url("/fonts/sbsansdisplay-bold.woff2") format("woff2"),
+    url("/fonts/sbsansdisplay-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "SB-Sans";
+  src:
+    url("/fonts/sbsansdisplay-semibold.woff2") format("woff2"),
+    url("/fonts/sbsansdisplay-semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SB-Sans";
+  src:
+    url("/fonts/sbsansdisplay-regular.woff2") format("woff2"),
+    url("/fonts/sbsansdisplay-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #00693b;
+  color: white;
+}
+
+main {
+  max-width: 320px;
+  margin-top: 24px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inactive {
+  filter: grayscale(100%) brightness(95%);
+  pointer-events: none;
+}
+
+.inactive::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #b7fff2;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 320px) {
+  main {
+    overflow: hidden;
+  }
 }
