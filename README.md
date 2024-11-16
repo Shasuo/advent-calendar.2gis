@@ -10,5 +10,6 @@ cd advent-calendar.2gis
 ```
 
 ```bash
-npm i
+npm i --force
 ```
+На момент разработки, стейт менеджер jotai не был обновлен до 15.0.0 версии React. --force используется из-за него.
