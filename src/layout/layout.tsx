@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-import { Footer } from "@/components/main/public";
+import { Footer, Popups } from "@/components/main/public";
 
 export const Layout = ({
   children,
@@ -7,7 +7,9 @@ export const Layout = ({
 }: MainLayoutProps): JSX.Element => {
   return (
     <div {...props}>
-      {children} <Footer />
+      <Popups />
+      {children}
+      <Footer />
     </div>
   );
 };

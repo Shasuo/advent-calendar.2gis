@@ -6,7 +6,7 @@ import { BearerToken } from "@/globalState/token";
 import { useAtom } from "jotai";
 
 export const Content = () => {
-  const [token] = useAtom(BearerToken);
+  const [token, setToken] = useAtom(BearerToken);
   interface InitialPageState {
     state: "initial" | "success" | "error";
   }
@@ -31,19 +31,23 @@ export const Content = () => {
           if (response.status === 200) {
             if (response.data.message === "401") {
               setTasksState({ state: "error" });
+              setToken(() => undefined);
             } else {
               setTasksMassive(response.data.result.finished_task_ids);
               setTasksState({ state: "success" });
               console.log(response.data.result.finished_task_ids);
             }
           } else {
+            setToken(() => undefined);
             setTasksState({ state: "error" });
           }
         } catch (error) {
           console.error("Ошибка при запросе:", error);
+          setToken(() => undefined);
           setTasksState({ state: "error" });
         }
       } else {
+        setToken(() => undefined);
         setTasksState({ state: "error" });
       }
     };
@@ -76,7 +80,6 @@ export const Content = () => {
       </section>
     );
   }
-
   return (
     <div className={"text-center font-semibold text-base mt-10"}>
       Ошибка авторизации!

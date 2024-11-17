@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { taskCard } from "@/components/pages/tasks/content/taskCards/taskCards";
 import axios from "axios";
+import { useAtom } from "jotai/index";
+import { ActivePopupName } from "@/globalState/popups";
 export const Card = ({ data, token }: { data: taskCard; token: string }) => {
+  const setPopupName = useAtom(ActivePopupName)[1];
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -26,7 +29,16 @@ export const Card = ({ data, token }: { data: taskCard; token: string }) => {
             "absolute top-0 left-0 z-30 w-full h-full hover:cursor-pointer"
           }
           onClick={() => postToken()}
-        ></div>
+        />
+      ) : undefined}
+
+      {data.status === "completed" && !data.demonstration ? (
+        <div
+          className={
+            "absolute top-0 left-0 z-30 w-full h-full hover:cursor-pointer"
+          }
+          onClick={() => setPopupName("task-done")}
+        />
       ) : undefined}
 
       <span
