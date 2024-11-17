@@ -24,7 +24,7 @@ export const PopupWrapper = ({
       setThisPopupState((prevState) => ({ ...prevState, state: true }));
       setTimeout(() => {
         setThisPopupState((prevState) => ({ ...prevState, animate: true }));
-      }, 1);
+      }, 100);
     } else if (thisPopupState.state) {
       setThisPopupState((prevState) => ({ ...prevState, animate: false }));
       setTimeout(() => {
