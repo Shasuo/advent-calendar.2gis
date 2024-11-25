@@ -2,10 +2,18 @@ import { MainFirstScreen } from "@/components/main/public";
 import { Content } from "./content/content";
 import { BearerToken } from "@/globalState/token";
 import { useAtom } from "jotai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ActivePopupName } from "@/globalState/popups";
 export const Tasks = () => {
   const [token, setToken] = useAtom(BearerToken);
   const [inputValue, setInputValue] = useState<string>("");
+
+  const setPopupName = useAtom(ActivePopupName)[1];
+  useEffect(() => {
+    if (!token) {
+      setPopupName("no-auth");
+    }
+  }, [token]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -41,7 +49,11 @@ export const Tasks = () => {
         </button>
       </div>
 
-      <MainFirstScreen text={"К заданиям"} anchorTargetId={"tasks-id"} />
+      <MainFirstScreen
+        text={"К заданиям"}
+        anchorTargetId={"tasks-id"}
+        readRules
+      />
       <Content />
     </main>
   );

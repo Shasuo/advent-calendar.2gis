@@ -1,25 +1,35 @@
 import Image from "next/image";
-import { YellowButton } from "@/components/reused/public";
+import {
+  MainHeadline,
+  MainLinksList,
+  NormalTextP,
+  YellowButton,
+} from "@/components/reused/public";
 
 export const WantAHolidayNow = () => (
-  <section className={"mt-[60px]"}>
+  <section
+    className={
+      "mt-[60px] box-border bg-[#013C22] rounded-[24px] py-8 px-4 z-10 relative text-center"
+    }
+  >
+    <MainHeadline text={"Выполните все задания"} />
+    <NormalTextP
+      text={
+        "Получите награду «Новогодняя звезда» в 2ГИС и шанс выиграть суперподарок! Победителя выберем случайным образом и объявим 27 декабря на сайте."
+      }
+      mt={8}
+    />
     <Image
       src={"/images/illustrations/homePage/superGift.png"}
-      alt={"Супер подарок!"}
-      width={320}
-      height={273}
-      className={"w-full h-auto"}
+      alt={"Новогодняя звезда"}
+      width={288}
+      height={186}
+      className={"w-full h-auto mt-4"}
     />
-    <div
-      className={
-        "box-border bg-[#013C22] rounded-[24px] py-8 px-4 mt-[-101px] z-10 relative"
-      }
-    >
-      <p className={"font-semibold text-base leading-5"}>
-        Выполните все задания адвент-календаря, получите в приложении 2ГИС
-        виртуальную награду «Ёлочка, гори» и шанс выиграть супер подарок!
-      </p>
-      <YellowButton text={"Уже хочу праздник!"} mt={16} href={"/tasks"} />
-    </div>
+    <YellowButton
+      text={"Уже хочу праздник!"}
+      mt={16}
+      href={MainLinksList["tasks"]}
+    />
   </section>
 );

@@ -8,106 +8,244 @@ export const InitialTasks: taskCard[] = [
     title: "Волшебный курсор",
     image: "card-1.png",
     activationDate: "active",
-    target_task_href: "https://www.google.com/",
+    toTheTask: {
+      title: "Волшебный курсор",
+      text: "Ура! Начинаем наше путешествие в Новый год. Загляните в Навигатор 2ГИС, там ждёт праздничная оленья упряжка — скорее запрыгивайте и меняйте курсор на новогодний!",
+      button: {
+        href: "dgis://2gis.ru/cursors_settings",
+        text: "Вперёд в 2ГИС",
+      },
+    },
   },
   {
     id: 2,
     type: "short",
     status: "available",
-    title: "Гирляндное настроение",
+    title: "Новогоднее путешествие",
     image: "card-2.png",
     activationDate: "active",
-    target_task_href: "https://www.google.com/",
+    toTheTask: {
+      title: "Новогоднее путешествие",
+      text: "Планируете новогодние каникулы? Вместе с «Отелло» мы подобрали классные отели по всей России. Возможно, один из них станет вашим местом встречи Нового года!",
+      button: {
+        href: "https://otello.ru/collection/kak-v-skazke?adults=2",
+        text: "Смотреть отели",
+      },
+    },
+    promotionalCode: {
+      title: "Промокод от Отелло на скидку 10%:",
+      code: "KAKVSKAZKE10",
+      image: "Otello.png",
+      subtitle:
+        "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
+      conditions:
+        "Скидка 10%, на любое одно бронирование одним пользователем, срок действия с 13.12.2024 до 31.01.2025",
+    },
   },
   {
     id: 3,
     type: "short",
     status: "available",
-    title: "Праздничный рецепт",
+    title: "Гирляндное настроение",
     image: "card-3.png",
     activationDate: "active",
-    target_task_href: "https://www.google.com/",
+    toTheTask: {
+      title: "Гирляндное настроение",
+      text: "Создайте волшебную атмосферу дома с нашими трафаретами для гирлянд: скачайте, вырежьте и украсьте свой интерьер. В 2ГИС можно найти магазины канцелярии для покупки бумаги, ножниц и других материалов для творчества.",
+      button: {
+        href: "dgis://2gis.ru/search/канцелярия",
+        text: "Найти всё для творчества",
+      },
+    },
   },
   {
     id: 4,
     type: "short",
-    status: "notAvailable",
-    title: "Курс на Великий Устюг",
+    status: "available",
+    title: "Праздничный рецепт",
     image: "card-3.png",
-    activationDate: "2024-12-15T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+    toTheTask: {
+      title: "Праздничный рецепт",
+      text: "Что согреет в морозный вечер? Конечно, вкусное какао! Как раз нашли для вас рецепт. А если не хватает ингредиентов, ищите ближайшие продуктовые магазины в 2ГИС.",
+      button: {
+        href: "https://2gis.ru/story/c333f162-0a83-4240-9dcc-3ad0e16e3c01",
+        text: "Приготовить какао с зефирками",
+      },
+    },
   },
   {
     id: 5,
     type: "short",
-    status: "notAvailable",
-    title: "Москва новогодняя",
+    status: "available",
+    title: "Книжная магия",
     image: "card-3.png",
-    activationDate: "2024-12-16T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+    toTheTask: {
+      title: "Книжная магия",
+      text: "Вместе с Литрес мы собрали самые популярные книги для уютных зимних вечеров. Самое время составить себе список книг на новогодние каникулы, а мы подготовили для вас приятный подарок!",
+      button: {
+        href: "https://www.litres.ru/landing/2gisadvent/?lfrom=1204677204&utm_source=2gisadvent&utm_medium=cross&utm_campaign=2gisadvent",
+        text: "Открыть подборку",
+      },
+    },
+    promotionalCode: {
+      title: "Промокод от Литрес:",
+      code: "2GIS2025",
+      subtitle:
+        "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
+      conditions:
+        "Промокод даёт 2 книги в подарок из подборки и скидку 20% на весь каталог, срок действия до 31 января 2025",
+      image: "Otello.png",
+    },
   },
   {
     id: 6,
     type: "full",
-    status: "notAvailable",
+    status: "available",
     title: "Мандаринка для друга",
     image: "card-6.png",
-    activationDate: "2024-12-17T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+    toTheTask: {
+      title: "Мандаринка для друга",
+      text: "Знаете, что в 2ГИС можно добавлять друзей? Вы сможете видеть их на карте, обмениваться сообщениями и реакциями. Поделитесь новогодним настроением — закидайте друзей мандаринками и ёлками!",
+      button: {
+        href: "dgis://2gis.ru/mapfriends/tab",
+        text: "Поделиться настроением",
+      },
+    },
   },
   {
     id: 7,
     type: "full",
-    status: "notAvailable",
-    title: "Новогодний кинотеатр",
+    status: "available",
+    title: "Новогодний киномарафон",
     image: "card-6.png",
-    activationDate: "2024-12-18T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+    toTheTask: {
+      title: "Новогодний киномарафон",
+      text: "Вместе с Оkko собрали волшебную подборку новогодних фильмов, которая поможет создать праздничное настроение и окунуться в атмосферу чудес! Включайте любимые истории и наслаждайтесь уютными вечерами.",
+      button: {
+        href: "https://okko.tv/collection/ny-movie-2gis-col?utm_source=2gis&utm_medium=advent&utm_campaign=ny-movie-2gis-col",
+        text: "Выбрать фильм",
+      },
+    },
+    promotionalCode: {
+      title: "Промокод от Okko 60 дней за 1 руб.:",
+      image: "Otello.png",
+      code: "OKKO2025",
+      subtitle:
+        "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
+      conditions:
+        "Акция на подписку Прайм. Организатор: ООО «Окко», г. Санкт-Петербург, ОГРН 1167847381130. Сроки акции: 12.12.24 - 31.01.25 г. (по московскому времени). Сроки активации промокода: 12.12.24 - 31.01.25 г. (по московскому времени). Имеются ограничения для участников. Предусмотрено автопродление. Подробнее об акции, сроках и условиях ее проведения: https://okko.tv/s/okko2025. Подписка «СберПрайм» – услуги по организации и обеспечению предоставления физлицам доступа к комплексу сервисов партнёров оказывает АО «ЦПЛ», ОГРН 1117746689840, Москва. Подробнее о Подписке – https://www.sberbank.com/sberprime.",
+    },
   },
   {
     id: 8,
     type: "short",
-    status: "notAvailable",
+    status: "available",
     title: "Прогулка по склонам",
     image: "card-3.png",
-    activationDate: "2024-12-19T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+
+    toTheTask: {
+      title: "Прогулка по склонам",
+      text: "Отправимся в Шерегеш? Тут горнолыжный сезон длится до 280 дней в году! Кататься с 2ГИС будет удобнее: мы обновили всю нужную информацию, добавили время работы подъёмников и многое другое. ",
+      button: {
+        href: "dgis://2gis.ru/sheregesh/search/горнолыжные%20подъемники",
+        text: "Посмотреть на Шерегеш",
+      },
+    },
+    promotionalCode: {
+      title: "Промокод от Отелло на скидку 10%:",
+      image: "Otello.png",
+      code: "EDEMVGESH",
+      subtitle:
+        "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
+      conditions:
+        "Скидка 10% не более 2000р на любое одно бронирование одним пользователем, срок действия с 18.12.2024 до 31.01.2025",
+    },
   },
   {
     id: 9,
     type: "short",
-    status: "notAvailable",
+    status: "available",
     title: "Новогодняя почта",
     image: "card-3.png",
-    activationDate: "2024-12-20T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+    toTheTask: {
+      title: "Новогодняя почта",
+      text: "Поздравьте друзей с Новым годом милой почтовой открыткой с тёплыми пожеланиями! Найдите ближайшее почтовое отделение на карте 2ГИС.",
+      button: {
+        href: "dgis://2gis.ru/search/отделения%20почты",
+        text: "Найти почту",
+      },
+    },
   },
   {
     id: 10,
     type: "short",
-    status: "notAvailable",
-    title: "Музыкальная пауза",
+    status: "available",
+    title: "Новогодний маршрут",
     image: "card-3.png",
-    activationDate: "2024-12-21T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+
+    toTheTask: {
+      title: "Новогодний маршрут",
+      text: "Пора отправиться на поиски идеальных подарков! Возьмите каршеринг и прокатитесь по городу в поисках праздничного настроения и подарков для друзей и близких",
+      button: {
+        href: "https://citydriveone.onelink.me/oC99/1lnioil9",
+        text: "Поехали за подарками",
+      },
+    },
+    promotionalCode: {
+      title: "Промокод от Ситидрайв на 2 первые поездки:",
+      code: "2ГИСДРАЙВ",
+      image: "Otello.png",
+      subtitle:
+        "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
+      conditions:
+        'Промокод на 2 первые поездки, но не более 250 ₽ на каждую. При стоимости до 250 ₽ поездка за 1 ₽. Действует с 18.11.2024 г. по 15.01.2025 г. вкл. при аренде по Поминутному и Фикс тарифу. Подробнее citydrive.ru/rules/stock/  Реклама. Рекламодатель: ООО "НТС", г. Москва, пр-д Береговой, д.5А, к.1, помещ. 1/13, ИНН: 7704314221, ОГРН: 1157746368999, citydrive.ru  — сервис аренды автомобилей.',
+    },
   },
   {
     id: 11,
     type: "short",
-    status: "notAvailable",
+    status: "available",
     title: "Это точно ваш конёк!",
     image: "card-3.png",
-    activationDate: "2024-12-22T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+    toTheTask: {
+      title: "Это точно ваш конёк!",
+      text: "Кажется, коньки уже слегка запылились — пора их расчехлять. Покатайтесь на ближайшем открытом катке или сходите на крытый, чтобы ни у кого не было сомнений, кто тут чемпион по катанию.",
+      button: { href: "dgis://2gis.ru/search/каток", text: "Найти каток" },
+    },
   },
   {
     id: 12,
     type: "full",
-    status: "notAvailable",
-    title: "Новогоднее путешествие",
+    status: "available",
+    title: "Курс на Великий Устюг",
     image: "card-6.png",
-    activationDate: "2024-12-23T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    activationDate: "active",
+
+    toTheTask: {
+      title: "Курс на Великий Устюг",
+      text: "Какао выпито и гирлянды развешены. Самое время запрягать оленей и строить маршрут до Великого Устюга. Сказка не так уж далеко!",
+      button: {
+        href: "dgis://2gis.ru/velikij-ustyug/directions/points/%7C46.296988%2C60.770316%3B70030076137622163",
+        text: "Построить маршрут",
+      },
+    },
+    promotionalCode: {
+      title: "Промокод от Отелло на скидку 10%:",
+      code: "DEDMOROZ",
+      image: "Otello.png",
+      subtitle:
+        "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
+      conditions:
+        "Скидка 10% не более 1000р на любое одно бронирование одним пользователем, срок действия с 23.12.2024 до 31.01.2025",
+    },
   },
   {
     id: 13,
@@ -116,15 +254,27 @@ export const InitialTasks: taskCard[] = [
     title: "И вот она, нарядная!",
     image: "card-3.png",
     activationDate: "2024-12-24T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+
+    toTheTask: {
+      title: "И вот она, нарядная!",
+      text: "До Нового года совсем немного — пора за ёлкой! И, конечно, за новыми игрушками для украшения. Мы уже отметили новогодние базары на карте 2ГИС, чтобы вы быстро нашли всё необходимое без лишних поисков.",
+      button: {
+        href: "dgis://2gis.ru/search/ёлочные%20базары",
+        text: "Пойти за ёлкой",
+      },
+    },
   },
   {
     id: 14,
     type: "short",
-    status: "notAvailable",
+    status: "available",
     title: "Снегопад на карте",
     image: "card-3.png",
     activationDate: "2024-12-25T00:00:00+03:00",
-    target_task_href: "https://www.google.com/",
+    toTheTask: {
+      title: "Снегопад на карте",
+      text: "Добавьте волшебство на карту! Включите на карте 2ГИС снег — это очень красиво и атмосферно!",
+      button: { href: "dgis://2gis.ru/maplayers", text: "Включить снег" },
+    },
   },
 ];

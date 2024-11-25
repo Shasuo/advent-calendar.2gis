@@ -2,6 +2,7 @@ import { Card } from "./card/card";
 import { useEffect, useState } from "react";
 import { InitialTasks } from "./cards";
 import { updateTaskStatus } from "@/scripts/public";
+import { PreRedirectPopup, Promo } from "@/globalState/preRedirectPopup";
 
 export interface taskCard {
   id: number;
@@ -9,9 +10,10 @@ export interface taskCard {
   status: "available" | "completed" | "notAvailable";
   title: string;
   image: string;
-  activationDate: string;
-  target_task_href: string;
+  activationDate: string | "active";
   demonstration?: boolean;
+  promotionalCode?: Promo;
+  toTheTask: PreRedirectPopup;
 }
 
 export const TaskCards = ({
@@ -21,6 +23,7 @@ export const TaskCards = ({
   finishedTasks: number[];
   token: string;
 }) => {
+  /*"2024-12-15T00:00:00+03:00"*/
   const initialTasks: taskCard[] = InitialTasks;
 
   const [tasks, setTasks] = useState<taskCard[]>([]);

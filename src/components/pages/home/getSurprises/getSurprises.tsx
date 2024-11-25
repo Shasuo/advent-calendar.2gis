@@ -1,20 +1,21 @@
 import Image from "next/image";
+import { MainHeadline, NormalTextP } from "@/components/reused/public";
 
 export const GetSurprises = () => (
   <section className={"mt-[60px] text-center max-w-contentWrapper mx-auto"}>
-    <h3 className={"text-[22px] font-semibold leading-[28px]"}>
-      Получайте сюрпризы
-    </h3>
+    <MainHeadline text={"Получайте сюрпризы"} />
+    <NormalTextP
+      text={
+        "В некоторых карточках мы спрятали сюрпризы — полезные промокоды, которые точно пригодятся на новогодних каникулах. Найдите их все!"
+      }
+      mt={8}
+    />
     <Image
       src={"/images/illustrations/homePage/surprise.png"}
       alt={"Сюрпризы"}
       width={288}
       height={211}
-      className={"w-full h-auto"}
+      className={"w-full h-auto mt-4"}
     />
-    <p className={"mt-4 text-sm font-normal leading-[22px]"}>
-      В некоторых карточках мы спрятали сюрпризы — полезные промокоды, которые
-      точно пригодятся на новогодних каникулах. Найдите их все!
-    </p>
   </section>
 );

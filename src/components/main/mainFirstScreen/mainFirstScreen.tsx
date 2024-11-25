@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MainImage } from "./mainImage/mainImage";
-
+import { MainLinksList, NormalTextP } from "@/components/reused/public";
 import { YellowButton } from "@/components/reused/public";
 import { YellowButtonType } from "@/components/reused/yellowButton/yellowButton";
 import Link from "next/link";
@@ -9,10 +9,11 @@ export const MainFirstScreen = ({
   href,
   mt,
   anchorTargetId,
+  readRules,
 }: YellowButtonType) => {
   return (
     <section className={"relative text-center"}>
-      <Link href={"/"}>
+      <Link href={MainLinksList["home"]}>
         <Image
           src={"/images/icons/logo.svg"}
           alt={"2ГИС"}
@@ -27,16 +28,31 @@ export const MainFirstScreen = ({
         <br /> на карте
       </h1>
       <MainImage />
-      <div className={"mt-7 max-w-[288px] font-normal text-xs mx-auto"}>
-        Открывайте карточки каждый день, заряжайтесь праздничным настроением
-        и получайте сюрпризы под ёлочку
-      </div>
+
+      <NormalTextP
+        text={
+          "Открывайте карточки каждый день, заряжайтесь праздничным настроением\n" +
+          "        и получайте сюрпризы под ёлочку"
+        }
+        mt={28}
+        mxAuto
+        maxW={288}
+      />
       <YellowButton
         text={text}
         mt={mt ? mt : 16}
         href={href}
         anchorTargetId={anchorTargetId}
       />
+      {readRules ? (
+        <YellowButton
+          text={"Читать правила"}
+          mt={8}
+          href={MainLinksList["home"]}
+          color={"white"}
+          bg={"#004F2C"}
+        />
+      ) : undefined}
     </section>
   );
 };

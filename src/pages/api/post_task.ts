@@ -20,13 +20,22 @@ export default async function handler(
     },
   };
 
-  axios
-    .post(
+  try {
+    const response = await axios.post(
       "https://newyear-advent2025-be.api.2gis.ru/v1/tasks",
       { task_id },
       config,
-    )
-    .catch((error) => {
-      console.error("Ошибка при отправке POST-запроса:", error);
-    });
+    );
+    res.status(200).json(response.data);
+  } catch (error) {
+    console.error("Ошибка в прокси:", error);
+
+    if (axios.isAxiosError(error)) {
+      if (error.response && error.response.status === 401) {
+        return res.status(200).json({ message: "401" });
+      }
+    }
+
+    res.status(500).json({ message: "Ошибка при запросе к API" });
+  }
 }

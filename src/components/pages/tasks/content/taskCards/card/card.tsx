@@ -1,22 +1,12 @@
 import Image from "next/image";
 import { taskCard } from "@/components/pages/tasks/content/taskCards/taskCards";
-import axios from "axios";
 import { useAtom } from "jotai/index";
 import { ActivePopupName } from "@/globalState/popups";
+import { PreRedirectPopup } from "@/globalState/preRedirectPopup";
 export const Card = ({ data, token }: { data: taskCard; token: string }) => {
+  const ToTheTask = data.toTheTask;
   const setPopupName = useAtom(ActivePopupName)[1];
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  const postToken = () => {
-    console.log(token);
-    if (data.status === "available") {
-      axios.post("/api/post_task", { task_id: data.id }, config);
-      window.location.href = data.target_task_href;
-    }
-  };
+  const setPreRedirectPopup = useAtom(PreRedirectPopup)[1];
 
   const rootImages = "/images/illustrations/tasksCards";
   return (
@@ -28,7 +18,17 @@ export const Card = ({ data, token }: { data: taskCard; token: string }) => {
           className={
             "absolute top-0 left-0 z-30 w-full h-full hover:cursor-pointer"
           }
-          onClick={() => postToken()}
+          onClick={() => {
+            setPreRedirectPopup({
+              id: data.id,
+              title: ToTheTask.title,
+              text: ToTheTask.text,
+              button: ToTheTask.button,
+              promo: data.promotionalCode,
+              token: token,
+            });
+            setPopupName("pre-redirect-task-popup");
+          }}
         />
       ) : undefined}
 
@@ -37,12 +37,22 @@ export const Card = ({ data, token }: { data: taskCard; token: string }) => {
           className={
             "absolute top-0 left-0 z-30 w-full h-full hover:cursor-pointer"
           }
-          onClick={() => setPopupName("task-done")}
+          onClick={() => {
+            setPopupName("task-done");
+            setPreRedirectPopup({
+              id: data.id,
+              title: ToTheTask.title,
+              text: ToTheTask.text,
+              button: ToTheTask.button,
+              promo: data.promotionalCode,
+              token: token,
+            });
+          }}
         />
       ) : undefined}
 
       <span
-        className={`${data.status === "available" ? "text-white bg-[#00693B] rounded-[2px] px-[6px] w-fit box-border max-h-5 pt-[2px]" : data.status === "completed" ? "text-white" : "text-[#1A1A1A]"} flex h-5 text-[8px] items-center`}
+        className={`${data.status === "available" ? "text-white bg-[#00693B] rounded-[2px] px-[6px] w-fit box-border max-h-5 pt-[2px]" : data.status === "completed" ? "text-[#03C46F]" : "text-[#1A1A1A]"} flex h-5 text-[8px] items-center`}
       >
         {data.status === "completed"
           ? "Выполнено"

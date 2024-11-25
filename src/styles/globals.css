@@ -58,6 +58,10 @@ main {
   z-index: 1;
 }
 
+.whitePlaceholder::placeholder {
+  color: white;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 50px;

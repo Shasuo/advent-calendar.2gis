@@ -9,7 +9,7 @@ export const updateTaskStatus = (
     now.getTime() + now.getTimezoneOffset() * 60000 + 3 * 3600000,
   );
 
-  const updatedTasks: taskCard[] = initialTasks.map((task): taskCard => {
+  return initialTasks.map((task): taskCard => {
     if (finishedTasks.includes(task.id)) {
       return { ...task, status: "completed" };
     }
@@ -24,6 +24,4 @@ export const updateTaskStatus = (
     }
     return { ...task, status: "notAvailable" };
   });
-
-  return updatedTasks;
 };

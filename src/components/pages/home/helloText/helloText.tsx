@@ -1,21 +1,24 @@
 import Image from "next/image";
-import styles from "./helloText.module.css";
+import { MainHeadline, NormalTextP } from "@/components/reused/public";
 export const HelloText = () => (
-  <section className={"mt-[60px] max-w-contentWrapper w-full mx-auto relative"}>
-    <p className={"text-base font-semibold leading-[20px]"}>
-      До Нового года осталась всего пара недель, но добавить немного волшебства
-      и радости можно уже сейчас
-    </p>
-    <p className={"mt-4 text-xs leading-4"}>
-      Мы сделали адвент-календарь, который принесёт вам то самое новогоднее
-      настроение и порадует приятными подарками.
-    </p>
+  <section
+    className={
+      "mt-[60px] max-w-contentWrapper w-full mx-auto relative text-center"
+    }
+  >
     <Image
-      src={"/images/illustrations/homePage/snowflake-1.png"}
-      alt={"Снежинка"}
-      width={116}
-      height={107}
-      className={`absolute top-[119px] right-[-57px] ${styles.item}`}
+      src={"/images/illustrations/homePage/snowflake-helloScreen.png"}
+      alt={"Пара недель до нового года"}
+      width={64}
+      height={71}
+      className={"mx-auto"}
+    />
+    <MainHeadline text={"До Нового года осталась всего пара недель"} mt={8} />
+    <NormalTextP
+      text={
+        "Но волшебство можно почувствовать уже сейчас с нашим адвент-календарём, который подарит новогоднее настроение и сюрпризы."
+      }
+      mt={16}
     />
   </section>
 );
