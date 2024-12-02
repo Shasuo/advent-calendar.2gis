@@ -8,6 +8,7 @@ import { useAtom } from "jotai/index";
 import { PreRedirectPopup } from "@/globalState/preRedirectPopup";
 import { ActivePopupName } from "@/globalState/popups";
 import { PostTask } from "@/scripts/tasks/postTask";
+import Image from "next/image";
 
 export const PreTaskPopup = () => {
   const [popupState] = useAtom(PreRedirectPopup);
@@ -16,7 +17,7 @@ export const PreTaskPopup = () => {
     <PopupWrapper popupName={"pre-redirect-task-popup"}>
       <div className={"text-center mt-2"}>
         {popupState.promo ? (
-          <img
+          <Image
             src={`/images/illustrations/tasksCards/popups/${popupState.promo.image}`}
             alt={popupState.title}
             width={89}
@@ -47,9 +48,12 @@ export const PreTaskPopup = () => {
             }}
           />
         )}
-        <p className={"mt-4 font-normal text-xs leading-4 opacity-70"}>
-          Чтобы завтра открылось новое задание, не забудьте нажать кнопку — так
-          мы узнаем, что снежинок у вас хватит на целый сугроб!
+        <p
+          className={
+            "mt-4 font-normal text-xs leading-4 opacity-70 box-border px-3 pt-[14px] pb-[10px] bg-[#013C22] rounded-[16px]"
+          }
+        >
+          Чтобы завтра открылось новое задание, не забудьте нажать кнопку
         </p>
       </div>
     </PopupWrapper>

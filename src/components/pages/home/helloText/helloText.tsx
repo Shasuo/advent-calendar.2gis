@@ -7,13 +7,13 @@ export const HelloText = () => (
     }
   >
     <Image
-      src={"/images/illustrations/homePage/snowflake-helloScreen.png"}
+      src={"/images/illustrations/homePage/confetti.png"}
       alt={"Пара недель до нового года"}
-      width={64}
+      width={288}
       height={71}
-      className={"mx-auto"}
+      className={"mx-auto w-full h-auto"}
     />
-    <MainHeadline text={"До Нового года осталась всего пара недель"} mt={8} />
+    <MainHeadline text={"До Нового года всего пара недель"} mt={16} />
     <NormalTextP
       text={
         "Но волшебство можно почувствовать уже сейчас с нашим адвент-календарём, который подарит новогоднее настроение и сюрпризы."

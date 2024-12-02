@@ -19,7 +19,11 @@ export const NoAuthPopup = () => {
         Авторизуйтесь в 2ГИС любым способом и возвращайтесь сюда, чтобы
         новогодняя сказка началась.
       </p>
-      <YellowButton text={"Авторизоваться"} mt={16} />
+      <YellowButton
+        text={"Авторизоваться"}
+        mt={16}
+        href={"dgis://2gis.ru/mapfriends/contest"}
+      />
     </PopupWrapper>
   );
 };

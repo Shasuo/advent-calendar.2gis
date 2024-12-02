@@ -8,24 +8,10 @@ export const SocialGarland = ({ mt }: { mt?: number }) => (
   >
     <div className={"relative text-center"}>
       <Image
-        src={"/images/illustrations/final/garland__snowflake-1.png"}
-        alt={"Подпишитесь на телеграм-канал"}
-        width={59}
-        height={61}
-        className={"absolute top-0 -left-[9px]"}
-      />
-      <Image
-        src={"/images/illustrations/final/garland__snowflake-2.png"}
-        alt={"Подпишитесь на телеграм-канал"}
-        width={116}
-        height={107}
-        className={"absolute -top-5 -right-[11px]"}
-      />
-      <Image
         src={"/images/illustrations/final/garland.png"}
         alt={"Подпишитесь на телеграм-канал"}
-        width={271.15}
-        height={161.74}
+        width={288}
+        height={150}
         className={"max-w-fit h-auto"}
       />
       <NormalTextP

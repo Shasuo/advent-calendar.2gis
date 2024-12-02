@@ -4,9 +4,18 @@ import { Indicator } from "./indicator/indicator";
 import { TaskCards } from "./taskCards/taskCards";
 import { BearerToken } from "@/globalState/token";
 import { useAtom } from "jotai";
+import { PageChangeCounter } from "@/globalState/pageChangeCounter";
+import { TasksMassive } from "@/globalState/tasksMassive";
+import { ActivePopupName } from "@/globalState/popups";
+import { InitialGetStatus } from "@/globalState/initialGetStatus";
 
 export const Content = () => {
   const [token, setToken] = useAtom(BearerToken);
+  const changeCounter = useAtom(PageChangeCounter)[0];
+  const taskMassive = useAtom(TasksMassive)[0];
+  const setPopupName = useAtom(ActivePopupName)[1];
+  const initialGetStatus = useAtom(InitialGetStatus)[0];
+
   interface InitialPageState {
     state: "initial" | "success" | "error";
   }
@@ -14,46 +23,70 @@ export const Content = () => {
   const [tasksState, setTasksState] = useState<InitialPageState>({
     state: "initial",
   });
-  const [tasksMassive, setTasksMassive] = useState([]);
+  const [tasksMassive, setTasksMassive] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchTasks = async () => {
-      setTasksState({ state: "initial" });
-      if (token) {
-        try {
-          const config = {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          };
-          const response = await axios.get("/api/tasks", config);
-
-          if (response.status === 200) {
-            if (response.data.message === "401") {
-              setTasksState({ state: "error" });
-              setToken(() => undefined);
-            } else {
-              setTasksMassive(response.data.result.finished_task_ids);
-              setTasksState({ state: "success" });
-              console.log(response.data.result.finished_task_ids);
-            }
+      if (initialGetStatus !== "initial") {
+        if (initialGetStatus) {
+          setTasksState({ state: "initial" });
+          if (changeCounter === 0) {
+            setTasksMassive(taskMassive);
+            setTasksState({ state: "success" });
+            console.log(taskMassive);
           } else {
-            setToken(() => undefined);
-            setTasksState({ state: "error" });
+            if (token) {
+              try {
+                const config = {
+                  headers: {
+                    Authorization: `Bearer ${token}`,
+                  },
+                };
+
+                const response = await axios.get(
+                  "https://newyear-advent2025-be.api.2gis.ru/v1/tasks",
+                  config,
+                );
+
+                if (response.status === 200) {
+                  if (response.data.message === "401") {
+                    setTasksState({ state: "error" });
+                    setToken(() => undefined);
+                    setPopupName("error");
+                  } else {
+                    setTasksMassive(response.data.result.finished_task_ids);
+                    console.log(response.data.result.finished_task_ids);
+                    setTasksState({ state: "success" });
+                  }
+                } else {
+                  setToken(() => undefined);
+                  setTasksState({ state: "error" });
+                  setPopupName("error");
+                }
+              } catch (error) {
+                console.error("Ошибка при запросе:", error);
+                setToken(() => undefined);
+                setPopupName("error");
+                setTasksState({ state: "error" });
+              }
+            } else {
+              setToken(() => undefined);
+              setPopupName("error");
+              setTasksState({ state: "error" });
+              console.log("#@$323");
+            }
           }
-        } catch (error) {
-          console.error("Ошибка при запросе:", error);
+        } else {
           setToken(() => undefined);
+          setPopupName("no-auth");
           setTasksState({ state: "error" });
+          console.log("Ошибка авторизации");
         }
-      } else {
-        setToken(() => undefined);
-        setTasksState({ state: "error" });
       }
     };
 
     fetchTasks();
-  }, [token]);
+  }, [initialGetStatus]);
 
   if (tasksState.state === "initial") {
     return <div className="loader"></div>;

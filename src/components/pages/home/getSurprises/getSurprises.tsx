@@ -14,7 +14,7 @@ export const GetSurprises = () => (
       src={"/images/illustrations/homePage/surprise.png"}
       alt={"Сюрпризы"}
       width={288}
-      height={211}
+      height={199}
       className={"w-full h-auto mt-4"}
     />
   </section>

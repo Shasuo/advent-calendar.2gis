@@ -35,7 +35,8 @@ export const InitialTasks: taskCard[] = [
     promotionalCode: {
       title: "Промокод от Отелло на скидку 10%:",
       code: "KAKVSKAZKE10",
-      image: "Otello.png",
+      image: "task-2.png",
+      secondImage: "task-2-done.png",
       subtitle:
         "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
       conditions:
@@ -63,13 +64,13 @@ export const InitialTasks: taskCard[] = [
     type: "short",
     status: "available",
     title: "Праздничный рецепт",
-    image: "card-3.png",
+    image: "card-4.png",
     activationDate: "active",
     toTheTask: {
       title: "Праздничный рецепт",
       text: "Что согреет в морозный вечер? Конечно, вкусное какао! Как раз нашли для вас рецепт. А если не хватает ингредиентов, ищите ближайшие продуктовые магазины в 2ГИС.",
       button: {
-        href: "https://2gis.ru/story/c333f162-0a83-4240-9dcc-3ad0e16e3c01",
+        href: "dgis://2gis.ru/story/c333f162-0a83-4240-9dcc-3ad0e16e3c01",
         text: "Приготовить какао с зефирками",
       },
     },
@@ -79,7 +80,7 @@ export const InitialTasks: taskCard[] = [
     type: "short",
     status: "available",
     title: "Книжная магия",
-    image: "card-3.png",
+    image: "card-5.png",
     activationDate: "active",
     toTheTask: {
       title: "Книжная магия",
@@ -96,7 +97,8 @@ export const InitialTasks: taskCard[] = [
         "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
       conditions:
         "Промокод даёт 2 книги в подарок из подборки и скидку 20% на весь каталог, срок действия до 31 января 2025",
-      image: "Otello.png",
+      image: "task-5.png",
+      secondImage: "task-5-done.png",
     },
   },
   {
@@ -120,7 +122,7 @@ export const InitialTasks: taskCard[] = [
     type: "full",
     status: "available",
     title: "Новогодний киномарафон",
-    image: "card-6.png",
+    image: "card-7.png",
     activationDate: "active",
     toTheTask: {
       title: "Новогодний киномарафон",
@@ -132,7 +134,8 @@ export const InitialTasks: taskCard[] = [
     },
     promotionalCode: {
       title: "Промокод от Okko 60 дней за 1 руб.:",
-      image: "Otello.png",
+      image: "task-7.png",
+      secondImage: "task-7-done.png",
       code: "OKKO2025",
       subtitle:
         "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
@@ -145,7 +148,7 @@ export const InitialTasks: taskCard[] = [
     type: "short",
     status: "available",
     title: "Прогулка по склонам",
-    image: "card-3.png",
+    image: "card-8.png",
     activationDate: "active",
 
     toTheTask: {
@@ -158,7 +161,8 @@ export const InitialTasks: taskCard[] = [
     },
     promotionalCode: {
       title: "Промокод от Отелло на скидку 10%:",
-      image: "Otello.png",
+      image: "task-2.png",
+      secondImage: "task-2-done.png",
       code: "EDEMVGESH",
       subtitle:
         "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
@@ -171,7 +175,7 @@ export const InitialTasks: taskCard[] = [
     type: "short",
     status: "available",
     title: "Новогодняя почта",
-    image: "card-3.png",
+    image: "card-9.png",
     activationDate: "active",
     toTheTask: {
       title: "Новогодняя почта",
@@ -187,7 +191,7 @@ export const InitialTasks: taskCard[] = [
     type: "short",
     status: "available",
     title: "Новогодний маршрут",
-    image: "card-3.png",
+    image: "card-10.png",
     activationDate: "active",
 
     toTheTask: {
@@ -201,7 +205,8 @@ export const InitialTasks: taskCard[] = [
     promotionalCode: {
       title: "Промокод от Ситидрайв на 2 первые поездки:",
       code: "2ГИСДРАЙВ",
-      image: "Otello.png",
+      image: "task-10.png",
+      secondImage: "task-10-done.png",
       subtitle:
         "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
       conditions:
@@ -213,7 +218,7 @@ export const InitialTasks: taskCard[] = [
     type: "short",
     status: "available",
     title: "Это точно ваш конёк!",
-    image: "card-3.png",
+    image: "card-11.png",
     activationDate: "active",
     toTheTask: {
       title: "Это точно ваш конёк!",
@@ -226,7 +231,7 @@ export const InitialTasks: taskCard[] = [
     type: "full",
     status: "available",
     title: "Курс на Великий Устюг",
-    image: "card-6.png",
+    image: "card-12.png",
     activationDate: "active",
 
     toTheTask: {
@@ -240,7 +245,8 @@ export const InitialTasks: taskCard[] = [
     promotionalCode: {
       title: "Промокод от Отелло на скидку 10%:",
       code: "DEDMOROZ",
-      image: "Otello.png",
+      image: "task-2.png",
+      secondImage: "task-2-done.png",
       subtitle:
         "Успейте сохранить или сделать скрин промокода до 27 декабря. А то растает!",
       conditions:
@@ -252,7 +258,7 @@ export const InitialTasks: taskCard[] = [
     type: "short",
     status: "notAvailable",
     title: "И вот она, нарядная!",
-    image: "card-3.png",
+    image: "card-13.png",
     activationDate: "2024-12-24T00:00:00+03:00",
 
     toTheTask: {
@@ -269,7 +275,7 @@ export const InitialTasks: taskCard[] = [
     type: "short",
     status: "available",
     title: "Снегопад на карте",
-    image: "card-3.png",
+    image: "card-14.png",
     activationDate: "2024-12-25T00:00:00+03:00",
     toTheTask: {
       title: "Снегопад на карте",

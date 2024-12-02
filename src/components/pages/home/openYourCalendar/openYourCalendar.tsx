@@ -6,8 +6,16 @@ export const OpenYourCalendar = () => {
   const generalClasses =
     "box-border px-4 py-8 bg-[#013C22] relative z-10 rounded-[24px] text-center";
   return (
-    <section>
-      <div className={`mt-[60px] ${generalClasses}`}>
+    <section className={"relative"}>
+      <div className={`mt-[60px] ${generalClasses} relative`}>
+        <div
+          className={
+            "w-full max-w-[272px] h-[200px] bg-[#00693B] rounded-[24px] mix-blend-lighten absolute top-[117px] z-0 opacity-60 absoluteCenter"
+          }
+          style={{
+            filter: "blur(60px) brightness(1.2)",
+          }}
+        />
         <MainHeadline text={"Открывайте календарь"} />
 
         <NormalTextP
@@ -17,8 +25,8 @@ export const OpenYourCalendar = () => {
           mt={8}
         />
 
-        <div className={"w-full mt-4 relative"}>
-          <div className={"relative z-30"}>
+        <div className={"w-full mt-4 relative h-[166px] text-left"}>
+          <div className={"z-30 absolute top-0 left-[50%] -translate-x-1/2"}>
             <Card
               data={{
                 id: 2,
@@ -37,7 +45,10 @@ export const OpenYourCalendar = () => {
               token={""}
             />
           </div>
-          <div className={"absolute z-20 top-0 left-[74px]"}>
+          <div
+            className={"absolute z-20 top-0 left-0 -ml-[13px]"}
+            style={{ transform: "scale(0.8)", filter: "brightness(85%)" }}
+          >
             <Card
               data={{
                 id: 3,
@@ -56,7 +67,10 @@ export const OpenYourCalendar = () => {
               token={""}
             />
           </div>
-          <div className={"absolute z-10 top-0 right-0"}>
+          <div
+            className={"absolute z-10 top-0 right-0 -mr-[13px] opacity-80"}
+            style={{ transform: "scale(0.8)" }}
+          >
             <Card
               data={{
                 id: 4,
@@ -77,11 +91,14 @@ export const OpenYourCalendar = () => {
           </div>
         </div>
       </div>
+      <div
+        className={"h-[1px] w-full mt-[-1px] z-20 relative"}
+        style={{ borderBottom: "1px dashed #00693b" }}
+      />
       <div className={generalClasses}>
         <NormalTextP
           text={
-            "К адвент-календарю можно вернуться в любое время через баннер на\n" +
-            "          главном экране приложения 2ГИС. Кликните — и вы снова здесь!"
+            "К адвент-календарю можно вернуться в любое время через баннер с мандаринкой на главном экране приложения 2ГИС. Кликните — и вы снова здесь!"
           }
         />
         <img

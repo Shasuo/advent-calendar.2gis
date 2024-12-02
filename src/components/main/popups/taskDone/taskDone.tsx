@@ -37,7 +37,7 @@ export const TaskDone = () => {
         <>
           <div className={"bg-white rounded-[24px] box-border py-6 px-5"}>
             <Image
-              src={`/images/illustrations/tasksCards/popups/${Promo.image}`}
+              src={`/images/illustrations/tasksCards/popups/${Promo.secondImage}`}
               alt={"Задание выполнено!"}
               width={89}
               height={89}
@@ -96,7 +96,7 @@ export const TaskDone = () => {
       ) : (
         <>
           <Image
-            src={"/images/illustrations/popups/no-auth.png"}
+            src={"/images/illustrations/popups/taskDone.png"}
             alt={"Задание выполнено!"}
             width={288}
             height={203}

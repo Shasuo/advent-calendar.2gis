@@ -12,7 +12,7 @@ export const WillComebackWhenDone = () => {
   return (
     <PopupWrapper popupName={"will-come-back-when-done-popup"}>
       <Image
-        src={"/images/illustrations/popups/welcome.png"}
+        src={"/images/illustrations/popups/comeback.png"}
         alt={"Не забудьте вернуться"}
         width={288}
         height={203}

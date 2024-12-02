@@ -1,5 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { Footer, Popups } from "@/components/main/public";
+import { AuthControl } from "./authControl";
+import { ChangePageMutations } from "./changePageMutations";
 
 export const Layout = ({
   children,
@@ -7,6 +9,8 @@ export const Layout = ({
 }: MainLayoutProps): JSX.Element => {
   return (
     <div {...props}>
+      <AuthControl />
+      <ChangePageMutations />
       <Popups />
       {children}
       <Footer />

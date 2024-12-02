@@ -42,6 +42,11 @@ main {
   margin-right: auto;
 }
 
+.absoluteCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .inactive {
   filter: grayscale(100%) brightness(95%);
   pointer-events: none;
@@ -59,7 +64,7 @@ main {
 }
 
 .whitePlaceholder::placeholder {
-  color: white;
+  color: #79b79c;
 }
 
 /* HTML: <div class="loader"></div> */

@@ -18,7 +18,7 @@ export const PostTask = async (
     };
 
     const response = await axios.post(
-      "/api/post_task",
+      "https://newyear-advent2025-be.api.2gis.ru/v1/tasks",
       { task_id: taskID },
       config,
     );

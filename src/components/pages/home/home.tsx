@@ -5,6 +5,7 @@ import { GetSurprises } from "./getSurprises/getSurprises";
 import { WantAHolidayNow } from "./WantAHolidayNow/WantAHolidayNow";
 import { Rules } from "./rules/rules";
 import { MainLinksList } from "@/components/reused/public";
+import { NotOver } from "./notOver/notOver";
 
 export const Home = () => (
   <main>
@@ -13,6 +14,7 @@ export const Home = () => (
     <OpenYourCalendar />
     <GetSurprises />
     <WantAHolidayNow />
+    <NotOver />
     <Rules />
   </main>
 );

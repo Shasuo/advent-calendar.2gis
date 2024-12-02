@@ -23,9 +23,9 @@ export const MainFirstScreen = ({
         />
       </Link>
 
-      <h1 className={"text-[35px] font-bold mt-6 leading-[100%]"}>
-        Новый год
-        <br /> на карте
+      <h1 className={"text-[42px] font-bold mt-6 leading-[115%]"}>
+        Маршрут
+        <br /> в Новый год
       </h1>
       <MainImage />
 
@@ -34,7 +34,7 @@ export const MainFirstScreen = ({
           "Открывайте карточки каждый день, заряжайтесь праздничным настроением\n" +
           "        и получайте сюрпризы под ёлочку"
         }
-        mt={28}
+        mt={16}
         mxAuto
         maxW={288}
       />

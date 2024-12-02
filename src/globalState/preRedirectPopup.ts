@@ -5,6 +5,7 @@ export interface Promo {
   code: string;
   subtitle: string;
   image: string;
+  secondImage: string;
   conditions: string;
 }
 export interface PreRedirectPopup {

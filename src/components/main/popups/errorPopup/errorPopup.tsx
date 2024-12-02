@@ -11,10 +11,10 @@ export const ErrorPopup = () => {
   return (
     <PopupWrapper popupName={"error-popup"}>
       <Image
-        src={"/images/illustrations/popups/tree.png"}
+        src={"/images/illustrations/popups/ERROR.png"}
         alt={"Что-то пошло не так"}
         width={288}
-        height={171}
+        height={202.18}
         className={"w-full h-auto"}
       />
       <span className={"text-center"}>

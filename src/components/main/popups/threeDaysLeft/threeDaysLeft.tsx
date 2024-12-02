@@ -13,7 +13,7 @@ export const ThreeDaysLeft = () => {
   return (
     <PopupWrapper popupName={"three-days-left-popup"}>
       <Image
-        src={"/images/illustrations/popups/tree.png"}
+        src={"/images/illustrations/popups/3Days.png"}
         alt={"Осталось 3 дня"}
         width={288}
         height={171}

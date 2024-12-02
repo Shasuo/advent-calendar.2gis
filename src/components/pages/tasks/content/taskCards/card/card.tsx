@@ -52,7 +52,7 @@ export const Card = ({ data, token }: { data: taskCard; token: string }) => {
       ) : undefined}
 
       <span
-        className={`${data.status === "available" ? "text-white bg-[#00693B] rounded-[2px] px-[6px] w-fit box-border max-h-5 pt-[2px]" : data.status === "completed" ? "text-[#03C46F]" : "text-[#1A1A1A]"} flex h-5 text-[8px] items-center`}
+        className={`${data.status === "available" ? "text-white bg-[#00693B] rounded-[2px] px-[6px] w-fit box-border max-h-5 pt-[2px]" : data.status === "completed" ? "text-[#03C46F]" : "text-[#1A1A1A]"} flex h-5 text-[10px] items-center font-semibold`}
       >
         {data.status === "completed"
           ? "Выполнено"
@@ -74,11 +74,11 @@ export const Card = ({ data, token }: { data: taskCard; token: string }) => {
       />
       {data.type === "full" ? (
         <Image
-          src={`${rootImages}/snowflake.png`}
+          src={`${rootImages}/confetti.png`}
           alt={"Снежинка"}
-          width={116}
-          height={107}
-          className={"absolute top-[70px] left-[-36px]"}
+          width={140}
+          height={46}
+          className={"absolute bottom-2 left-0"}
         />
       ) : undefined}
     </div>
