@@ -1,0 +1,19 @@
+.usersList > *:not(:first-child) {
+  position: relative;
+}
+
+.usersList > *:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Длина линии */
+  height: 1px; /* Толщина линии */
+  background: repeating-linear-gradient(
+    to right,
+    #013c22,
+    #013c22 10px,
+    transparent 10px,
+    /* Длина штриха */ transparent 20px /* Интервал между штрихами */
+  );
+}

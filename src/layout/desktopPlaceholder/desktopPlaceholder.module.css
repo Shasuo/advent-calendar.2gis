@@ -1,0 +1,60 @@
+.desktopPlaceholder {
+  max-width: 1366px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 72px;
+  position: relative;
+}
+.bigImage {
+  position: absolute;
+  right: 0;
+  top: 19px;
+  z-index: 0;
+}
+
+.title {
+  margin-top: 60px;
+  font-size: 90px;
+  font-weight: bold;
+  line-height: 110%;
+  max-width: 646px;
+}
+.text {
+  max-width: 646px;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 28px;
+  margin-top: 32px;
+}
+
+.QR {
+  margin-top: 75px;
+}
+
+.link {
+  margin-top: 12px;
+  text-decoration: underline;
+  font-size: 8px;
+  line-height: 12px;
+  font-weight: normal;
+}
+
+@media (max-width: 1367px) {
+  .desktopPlaceholder {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .bigImage {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .desktopPlaceholder {
+    display: none;
+  }
+}

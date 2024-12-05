@@ -9,6 +9,7 @@ export interface YellowButtonType {
   bg?: string;
   color?: string;
   readRules?: boolean;
+  inactive?: boolean;
 }
 export const YellowButton = ({
   text,
@@ -18,6 +19,7 @@ export const YellowButton = ({
   onClick,
   bg,
   color,
+  inactive,
 }: YellowButtonType) => {
   const commonClasses =
     "bg-[#FFB500] rounded-[16px] box-border max-w-[288px] pt-[17px] pb-[15px] box-border no-underline text-[#1A1A1A] w-full font-semibold block mx-auto text-base py-4 px-7 text-center leading-[16px]";
@@ -26,29 +28,39 @@ export const YellowButton = ({
     marginTop: mt ? `${mt}px` : undefined,
     background: bg ? bg : undefined,
     color: color ? color : undefined,
+    cursor: inactive ? "unset" : undefined,
   };
 
-  if (href) {
-    return (
-      <Link href={href} className={commonClasses} style={customStyles}>
-        {text}
-      </Link>
-    );
+  if (!inactive) {
+    if (href) {
+      return (
+        <Link href={href} className={commonClasses} style={customStyles}>
+          {text}
+        </Link>
+      );
+    } else {
+      return (
+        <button
+          type="button"
+          className={commonClasses}
+          style={customStyles}
+          onClick={() => {
+            if (anchorTargetId) {
+              Anchor(anchorTargetId);
+            }
+            if (onClick) {
+              onClick();
+            }
+          }}
+        >
+          {text}
+        </button>
+      );
+    }
   } else {
     return (
-      <button
-        className={commonClasses}
-        style={customStyles}
-        onClick={() => {
-          if (anchorTargetId) {
-            Anchor(anchorTargetId);
-          }
-          if (onClick) {
-            onClick();
-          }
-        }}
-      >
-        {text}
+      <button type="button" className={commonClasses} style={customStyles}>
+        <span className={"opacity-65"}>{text}</span>
       </button>
     );
   }

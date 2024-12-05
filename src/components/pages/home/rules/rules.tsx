@@ -36,6 +36,7 @@ export const Rules = () => {
       </div>
       <YellowButton
         text={"Задать вопрос"}
+        href={"https://t.me/twogis"}
         mt={32}
         color={"white"}
         bg={"#004F2C"}

@@ -36,7 +36,7 @@ export const TaskCards = ({
     const interval = setInterval(setTasksState, 60000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [finishedTasks]);
 
   return (
     <section

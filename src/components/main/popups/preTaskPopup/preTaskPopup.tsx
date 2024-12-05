@@ -9,10 +9,12 @@ import { PreRedirectPopup } from "@/globalState/preRedirectPopup";
 import { ActivePopupName } from "@/globalState/popups";
 import { PostTask } from "@/scripts/tasks/postTask";
 import Image from "next/image";
+import { TasksMassive } from "@/globalState/tasksMassive";
 
 export const PreTaskPopup = () => {
   const [popupState] = useAtom(PreRedirectPopup);
   const setPopupName = useAtom(ActivePopupName)[1];
+  const [taskMassive, setTaskMassive] = useAtom(TasksMassive);
   return (
     <PopupWrapper popupName={"pre-redirect-task-popup"}>
       <div className={"text-center mt-2"}>
@@ -43,6 +45,8 @@ export const PreTaskPopup = () => {
                 popupState.id,
                 popupState.token,
                 setPopupName,
+                setTaskMassive,
+                taskMassive,
               );
               setPopupName(() => undefined);
             }}

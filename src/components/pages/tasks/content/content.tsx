@@ -12,7 +12,7 @@ import { InitialGetStatus } from "@/globalState/initialGetStatus";
 export const Content = () => {
   const [token, setToken] = useAtom(BearerToken);
   const changeCounter = useAtom(PageChangeCounter)[0];
-  const taskMassive = useAtom(TasksMassive)[0];
+  const [taskMassive, setTaskMassive] = useAtom(TasksMassive);
   const setPopupName = useAtom(ActivePopupName)[1];
   const initialGetStatus = useAtom(InitialGetStatus)[0];
 
@@ -23,7 +23,6 @@ export const Content = () => {
   const [tasksState, setTasksState] = useState<InitialPageState>({
     state: "initial",
   });
-  const [tasksMassive, setTasksMassive] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -31,7 +30,6 @@ export const Content = () => {
         if (initialGetStatus) {
           setTasksState({ state: "initial" });
           if (changeCounter === 0) {
-            setTasksMassive(taskMassive);
             setTasksState({ state: "success" });
             console.log(taskMassive);
           } else {
@@ -54,7 +52,7 @@ export const Content = () => {
                     setToken(() => undefined);
                     setPopupName("error");
                   } else {
-                    setTasksMassive(response.data.result.finished_task_ids);
+                    setTaskMassive(response.data.result.finished_task_ids);
                     console.log(response.data.result.finished_task_ids);
                     setTasksState({ state: "success" });
                   }
@@ -73,7 +71,6 @@ export const Content = () => {
               setToken(() => undefined);
               setPopupName("error");
               setTasksState({ state: "error" });
-              console.log("#@$323");
             }
           }
         } else {
@@ -104,12 +101,12 @@ export const Content = () => {
               Прогресс выполнения
             </h4>
             <span className={"block mt-2 font-semibold text-base"}>
-              Выполнено заданий {tasksMassive.length}/14
+              Выполнено заданий {taskMassive.length}/14
             </span>
           </div>
-          <Indicator completeTasksCount={tasksMassive.length} />
+          <Indicator completeTasksCount={taskMassive.length} />
         </div>
-        <TaskCards finishedTasks={tasksMassive} token={token} />
+        <TaskCards finishedTasks={taskMassive} token={token} />
       </section>
     );
   }

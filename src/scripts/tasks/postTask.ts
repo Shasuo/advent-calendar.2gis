@@ -9,6 +9,8 @@ export const PostTask = async (
       | undefined
       | ((prev: string | undefined) => string | undefined),
   ) => void,
+  setTaskMassive: React.Dispatch<React.SetStateAction<number[]>>,
+  taskMassive: number[],
 ) => {
   try {
     const config = {
@@ -31,6 +33,8 @@ export const PostTask = async (
         setPopupName("error-popup");
       } else {
         console.log("Редирект на:", href);
+        setTaskMassive([...taskMassive, taskID]);
+        console.log([...taskMassive, taskID]);
         window.location.href = href;
       }
     } else {

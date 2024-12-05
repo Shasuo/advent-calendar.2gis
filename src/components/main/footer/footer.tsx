@@ -6,8 +6,11 @@ export const Footer = () => (
   >
     © 2024 2ГИС. 0+
     <br />
-    <span style={{ textDecoration: "underline" }}>
+    <a
+      href={"https://law.2gis.ru/giveaway-rules/"}
+      style={{ textDecoration: "underline" }}
+    >
       Полные правила акции в России
-    </span>
+    </a>
   </footer>
 );

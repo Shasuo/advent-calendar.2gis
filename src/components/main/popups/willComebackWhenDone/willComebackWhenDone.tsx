@@ -5,10 +5,12 @@ import { useAtom } from "jotai/index";
 import { PreRedirectPopup } from "@/globalState/preRedirectPopup";
 import { PostTask } from "@/scripts/tasks/postTask";
 import { ActivePopupName } from "@/globalState/popups";
+import { TasksMassive } from "@/globalState/tasksMassive";
 
 export const WillComebackWhenDone = () => {
   const [popupState] = useAtom(PreRedirectPopup);
   const setPopupName = useAtom(ActivePopupName)[1];
+  const [taskMassive, setTaskMassive] = useAtom(TasksMassive);
   return (
     <PopupWrapper popupName={"will-come-back-when-done-popup"}>
       <Image
@@ -32,6 +34,8 @@ export const WillComebackWhenDone = () => {
             popupState.id,
             popupState.token,
             setPopupName,
+            setTaskMassive,
+            taskMassive,
           );
           setPopupName(() => undefined);
         }}

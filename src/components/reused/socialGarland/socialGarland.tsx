@@ -16,7 +16,7 @@ export const SocialGarland = ({ mt }: { mt?: number }) => (
       />
       <NormalTextP
         text={
-          "Подпишитесь на телеграм-канал 2ГИС, там мы напомним о розыгрыше и расскажем о результатах."
+          "Подпишитесь на <a href='https://t.me/twogis' style='text-decoration: underline'>телеграм-канал</a> 2ГИС, там мы напомним о розыгрыше и расскажем о результатах."
         }
         mt={16}
       />

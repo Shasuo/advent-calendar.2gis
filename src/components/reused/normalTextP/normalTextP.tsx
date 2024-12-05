@@ -12,7 +12,6 @@ export const NormalTextP = ({
   <p
     className={`text-sm leading-5 font-normal ${mxAuto ? "mx-auto" : undefined} ${maxW ? `max-w-[${maxW}px]` : undefined}`}
     style={{ marginTop: mt ? `${mt}px` : undefined }}
-  >
-    {text}
-  </p>
+    dangerouslySetInnerHTML={{ __html: text }}
+  />
 );
